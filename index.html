@@ -1,59 +1,17 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DramaForge - Drama Title Generator</title>
+<title>DramaForge - AI Drama Generator</title>
 
-<meta name="description" content="Generate unique drama titles for romance, CEO, revenge, fantasy, and more story ideas.">
+<meta name="description" content="Generate drama stories, characters and plot ideas.">
 
-<meta name="keywords" content="drama title generator, romance title generator, CEO drama titles, manhwa titles, story ideas">
-
-<style>
-
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    text-align: center;
-    padding: 30px;
-}
-
-.container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-}
-
-h1 {
-    font-size: 40px;
-}
-
-p {
-    font-size: 18px;
-}
-
-select, button {
-    padding: 12px;
-    margin: 10px;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
-button {
-    cursor: pointer;
-}
-
-#result {
-    margin-top: 25px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -61,108 +19,216 @@ button {
 <body>
 
 
-<div class="container">
+<header class="header">
 
-<h1>DramaForge</h1>
+    <div class="logo">
+
+        <h1>🎭 DramaForge</h1>
+
+        <p>Create Unlimited Drama Stories</p>
+
+    </div>
+
+
+    <button id="themeBtn">
+        🌙 Dark Mode
+    </button>
+
+</header>
+
+
+
+<main class="container">
+
+
+<section class="generator">
+
+
+<h2>Drama Story Generator</h2>
+
 
 <p>
-Generate unique drama titles for romance, CEO, revenge, fantasy, and more.
+Choose a genre and create your story.
 </p>
 
 
-<select id="category">
 
-<option value="romance">Romance</option>
-<option value="ceo">CEO</option>
-<option value="revenge">Revenge</option>
-<option value="fantasy">Fantasy</option>
-<option value="family">Family</option>
+<select id="genre">
+
+<option value="romance">
+Romance
+</option>
+
+
+<option value="ceo">
+CEO / Billionaire
+</option>
+
+
+<option value="revenge">
+Revenge
+</option>
+
+
+<option value="rebirth">
+Rebirth
+</option>
+
+
+<option value="fantasy">
+Fantasy
+</option>
+
+
+<option value="villainess">
+Villainess
+</option>
+
+
+<option value="family">
+Family
+</option>
+
+
+<option value="historical">
+Historical
+</option>
+
+
+<option value="apocalypse">
+Apocalypse
+</option>
+
 
 </select>
 
 
-<br>
+
+<div class="buttons">
 
 
-<button onclick="generateTitle()">
-Generate Title
+<button id="generateBtn">
+🔥 Generate Story
 </button>
 
 
-<div id="result">
-Your title will appear here
-</div>
+<button id="randomBtn">
+🎲 Surprise Me
+</button>
 
 
 </div>
 
 
-
-<script>
-
-
-const titles = {
-
-romance: [
-"Falling In Love With My Secret Husband",
-"The Love We Never Expected",
-"Married To My Childhood Love",
-"The Girl Who Stole His Heart"
-],
-
-
-ceo: [
-"The CEO's Hidden Wife",
-"The Billionaire's Forgotten Love",
-"The Cold CEO Fell For Her",
-"The Secret Heiress Of The Empire"
-],
-
-
-revenge: [
-"She Returned To Take Everything Back",
-"The Girl Who Came Back For Revenge",
-"Her Second Life Begins With Revenge",
-"The Betrayed Wife Strikes Back"
-],
-
-
-fantasy: [
-"Reborn With A Powerful System",
-"The Girl Who Awakened Magic",
-"The Villainess Changes Her Destiny",
-"The Forgotten Princess Returns"
-],
-
-
-family: [
-"The Lost Daughter Of A Rich Family",
-"The Adopted Girl Reveals Her Identity",
-"The Family That Regretted Losing Her",
-"The Hidden Heiress Comes Home"
-]
-
-};
+</section>
 
 
 
-function generateTitle(){
-
-let category = document.getElementById("category").value;
-
-let list = titles[category];
-
-let random = Math.floor(Math.random() * list.length);
+<section class="result">
 
 
-document.getElementById("result").innerHTML = list[random];
+<h2 id="storyTitle">
+Your Drama Title
+</h2>
 
-}
+
+<p id="storyDescription">
+Story description will appear here.
+</p>
+<div class="story-card">
 
 
-</script>
+    <div class="story-item">
+
+        <h3>👤 Main Characters</h3>
+
+        <p id="storyCharacters">
+            Character names will appear here.
+        </p>
+
+    </div>
+
+
+
+    <div class="story-item">
+
+        <h3>💥 Plot Twist</h3>
+
+        <p id="storyTwist">
+            Plot twist will appear here.
+        </p>
+
+    </div>
+
+
+
+    <div class="story-item">
+
+        <h3>🎬 Episode Idea</h3>
+
+        <p id="storyEpisode">
+            Episode idea will appear here.
+        </p>
+
+    </div>
+
+
+</div>
+
+
+
+<div class="actions">
+
+
+<button id="copyBtn">
+📋 Copy Story
+</button>
+
+
+
+<button id="downloadBtn">
+📥 Download TXT
+</button>
+
+
+</div>
+
+
+</section>
+<footer class="footer">
+
+    <p>
+        © 2026 DramaForge. All Rights Reserved.
+    </p>
+
+
+    <div class="social-links">
+
+        <a href="#" id="facebookLink">
+            Facebook
+        </a>
+
+
+        <a href="#" id="tiktokLink">
+            TikTok
+        </a>
+
+
+        <a href="#" id="youtubeLink">
+            YouTube
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+<script src="database.js"></script>
+
+<script src="script.js"></script>
 
 
 </body>
-</html>
 
+</html>
